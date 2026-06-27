@@ -15,14 +15,20 @@ function Dashboard() {
   }, []);
 
   const loadDashboard = async () => {
-    try {
-      const res = await getLayout();
+  try {
+    const res = await getLayout();
 
-      setWidgets(res.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+    const data =
+      res.data?.widgets ??
+      res.data ??
+      [];
+
+    setWidgets(Array.isArray(data) ? data : []);
+  } catch (error) {
+    console.log(error);
+    setWidgets([]);
+  }
+};
 
   const addText = () => {
     setWidgets([
