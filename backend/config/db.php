@@ -9,11 +9,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
+// $host = "localhost";
+// $user = "root";
+// $password = "";
+// $database = "dashboard_builder";
 
-$host = "localhost";
-$user = "root";
-$password = "";
-$database = "dashboard_builder";
+$host = "sql202.infinityfree.com";
+$user = "if0_42281660";
+$password = "0LhFOiBs7FK";
+$database = "if0_42281660_dashboard_builder";
 
 $conn = new mysqli(
     $host,
